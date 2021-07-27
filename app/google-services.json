@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "124144187591",
+    "project_id": "viveronayon",
+    "storage_bucket": "viveronayon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124144187591:android:2b4af9062ed657585666e2",
+        "android_client_info": {
+          "package_name": "com.example.viveronayon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124144187591-h6ji9u1cbed4ofb8418av50jp4cv5udh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCXwx7AP-8x1MX__2En_mH7p0nI-FlM8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124144187591-h6ji9u1cbed4ofb8418av50jp4cv5udh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
