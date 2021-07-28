@@ -30,6 +30,7 @@ import java.util.logging.Logger;
 
 public class LoginActivity extends AppCompatActivity {
 
+    String passwordEmpresa;
     Button btnLogin;
     EditText editTextTextPassword;
     TextView textViewNombreVivero;
@@ -61,9 +62,14 @@ public class LoginActivity extends AppCompatActivity {
             if(task.isSuccessful()) {
                 //Obtiene el resultado
                 List<DocumentSnapshot> empresaResult = task.getResult().getDocuments();
+
                 //Como solo hay un resultado de empresa obtenemos iterando directamente al primero
                 textViewNombreVivero.setText(empresaResult.iterator().next().
                         getString(Constantes.CAMPO_NOMBRE));
+
+                passwordEmpresa= empresaResult.iterator().next().
+                        getString(Constantes.CAMPO_PASSWORD);
+
             }else{
                 //Abre un dialogo con el mensaje de error
                 Toast.makeText(getApplicationContext(), "Error al obtener datos de empresa",
@@ -72,6 +78,9 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+
+
+
     private void iniciarComponentes() {
         btnLogin = findViewById(R.id.buttonLogin);
         editTextTextPassword = findViewById(R.id.editTextTextPassword);
@@ -79,7 +88,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void clickLogin() {
-        Intent i = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(i);
+        if(editTextTextPassword.getText().toString().equals(passwordEmpresa)){
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(i);
+        }else{
+            Toast.makeText(getApplicationContext(), "Contraseña incorrecta",
+                    Toast.LENGTH_LONG).show();
+            editTextTextPassword.getText();
+        }
     }
 }
