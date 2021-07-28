@@ -30,7 +30,7 @@ import java.util.logging.Logger;
 
 public class LoginActivity extends AppCompatActivity {
 
-    String passwordEmpresa;
+    public static String passwordEmpresa;
     Button btnLogin;
     EditText editTextTextPassword;
     TextView textViewNombreVivero;
