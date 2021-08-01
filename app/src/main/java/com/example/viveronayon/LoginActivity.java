@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     EditText editTextTextPassword;
     TextView textViewNombreVivero;
+    ImageView imageQr;
     FirebaseFirestore db;
 
     @Override
@@ -45,11 +47,22 @@ public class LoginActivity extends AppCompatActivity {
         this.iniciarComponentes();
         this.instanciarInformacionEmpresa();
 
+
         //Eventos
         btnLogin.setOnClickListener(view -> {
             clickLogin();
         });
 
+        //Eventos
+        imageQr.setOnClickListener(view -> {
+            clickPassword();
+        });
+
+    }
+
+    private void clickPassword() {
+        Intent i = new Intent(LoginActivity.this, CamaraActivity.class);
+        startActivity(i);
     }
 
     /**
@@ -66,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                 //Como solo hay un resultado de empresa obtenemos iterando directamente al primero
                 textViewNombreVivero.setText(empresaResult.iterator().next().
                         getString(Constantes.CAMPO_NOMBRE));
-
+                // Obtenemos el password
                 passwordEmpresa= empresaResult.iterator().next().
                         getString(Constantes.CAMPO_PASSWORD);
 
@@ -85,16 +98,17 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.buttonLogin);
         editTextTextPassword = findViewById(R.id.editTextTextPassword);
         textViewNombreVivero = findViewById(R.id.textViewNombreVivero);
+        imageQr= findViewById(R.id.imageQr);
     }
 
     private void clickLogin() {
+        //Comparamos el password ingresado en la app con el password almacenado en la base de datos
         if(editTextTextPassword.getText().toString().equals(passwordEmpresa)){
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);
         }else{
             Toast.makeText(getApplicationContext(), "Contraseña incorrecta",
                     Toast.LENGTH_LONG).show();
-            editTextTextPassword.getText();
         }
     }
 }
