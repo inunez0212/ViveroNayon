@@ -1,10 +1,9 @@
-package com.example.viveronayon;
+package com.example.viveronayon.ui;
 
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -12,12 +11,11 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.webkit.URLUtil;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.example.viveronayon.R;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -25,7 +23,7 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 
-import static com.example.viveronayon.LoginActivity.passwordEmpresa;
+import static com.example.viveronayon.ui.LoginActivity.passwordEmpresa;
 
 
 public class CamaraActivity extends AppCompatActivity {

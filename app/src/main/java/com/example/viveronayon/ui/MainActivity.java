@@ -1,8 +1,6 @@
-package com.example.viveronayon;
+package com.example.viveronayon.ui;
 
 import android.os.Bundle;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -10,8 +8,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.viveronayon.R;
 import com.example.viveronayon.databinding.ActivityMainBinding;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 

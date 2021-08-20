@@ -2,30 +2,30 @@ package com.example.viveronayon.entity;
 
 public class PlantaEntity {
 
-    private int idPlanta;
+    private String idPlanta;
     private String nombre;
     private String nombreCientifico;
     private String descripcion;
-    private String consejo;
-    private int imagen;
+    private String cuidados;
+    private String imagen;
 
     public PlantaEntity() {
     }
 
-    public PlantaEntity(int idPlanta, String nombre, String nombreCientifico, String descripcion, String consejo, int imagen) {
+    public PlantaEntity(String idPlanta, String nombre, String nombreCientifico, String descripcion, String cuidados, String imagen) {
         this.idPlanta = idPlanta;
         this.nombre = nombre;
         this.nombreCientifico = nombreCientifico;
         this.descripcion = descripcion;
-        this.consejo = consejo;
+        this.cuidados = cuidados;
         this.imagen = imagen;
     }
 
-    public int getIdPlanta() {
+    public String getIdPlanta() {
         return idPlanta;
     }
 
-    public void setIdPlanta(int idPlanta) {
+    public void setIdPlanta(String idPlanta) {
         this.idPlanta = idPlanta;
     }
 
@@ -53,31 +53,19 @@ public class PlantaEntity {
         this.descripcion = descripcion;
     }
 
-    public String getConsejo() {
-        return consejo;
+    public String getCuidados() {
+        return cuidados;
     }
 
-    public void setConsejo(String consejo) {
-        this.consejo = consejo;
+    public void setCuidados(String cuidados) {
+        this.cuidados = cuidados;
     }
 
-    public int getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(int imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
-    }
-
-    @Override
-    public String toString() {
-        return "plantaEntity{" +
-                "idPlanta=" + idPlanta +
-                ", nombre='" + nombre + '\'' +
-                ", nombreCientifico='" + nombreCientifico + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", consejo='" + consejo + '\'' +
-                ", imagen=" + imagen +
-                '}';
     }
 }
