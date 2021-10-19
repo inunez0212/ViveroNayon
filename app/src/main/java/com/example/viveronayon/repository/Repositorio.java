@@ -24,7 +24,7 @@ public class Repositorio {
                     plantaEntity.setNombre(dato.getString(Constantes.CAMPO_NOMBRE_COMUN));
                     plantaEntity.setDescripcion(dato.getString(Constantes.CAMPO_DESCRIPCION));
                     plantaEntity.setCuidados(dato.getString(Constantes.CAMPO_CUIDADOS));
-                    //plantaEntity.setImagen(dato.getString(Constantes.URL_FOTO+Constantes.CAMPO_IMAGEN));
+                    plantaEntity.setImagen(dato.getString(Constantes.CAMPO_IMAGEN));
                     lista.add(plantaEntity);
                 }
             }

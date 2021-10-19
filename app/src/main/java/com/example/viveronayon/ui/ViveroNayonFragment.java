@@ -32,7 +32,7 @@ public class ViveroNayonFragment extends Fragment {
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
-    private int mColumnCount = 2;
+    private int mColumnCount = 1;
     private NuevaPlantaDialogViewModel nuevaPlantaDialogViewModel;
     private List<PlantaEntity> plantaList= new ArrayList<>();
     private MyViveroNayonRecyclerViewAdapter adapterPlanta;
@@ -96,7 +96,8 @@ public class ViveroNayonFragment extends Fragment {
                                 plantaEntity.setNombre(document.getString(Constantes.CAMPO_NOMBRE_COMUN));
                                 plantaEntity.setDescripcion(document.getString(Constantes.CAMPO_DESCRIPCION));
                                 plantaEntity.setCuidados(document.getString(Constantes.CAMPO_CUIDADOS));
-                                //plantaEntity.setImagen(document.getString(Constantes.URL_FOTO+Constantes.CAMPO_IMAGEN));
+                                plantaEntity.setImagen(document.getString(Constantes.CAMPO_IMAGEN));
+                                // poner id de la planta
                                 plantaList.add(plantaEntity);
 
                             }

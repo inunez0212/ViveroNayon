@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.viveronayon.R;
+import com.example.viveronayon.common.Constantes;
 import com.example.viveronayon.entity.PlantaEntity;
 
 import java.util.List;
@@ -43,12 +45,16 @@ public class MyViveroNayonRecyclerViewAdapter extends RecyclerView.Adapter<MyViv
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
+
+        // ingresar el id de planta
         holder.mItem = mValues.get(position);
         holder.textViewNombreCientifico.setText(holder.mItem.getNombreCientifico());
         holder.textViewNombre.setText(holder.mItem.getNombre());
         holder.textViewDescripcion.setText(holder.mItem.getDescripcion());
         holder.textViewCuidados.setText(holder.mItem.getCuidados());
-        //holder.imageViewFoto.setImageResource(Integer.parseInt(holder.mItem.getImagen()));
+        Glide.with(ctx)
+                .load(Constantes.URL_FOTO+holder.mItem.getImagen())
+                .into(holder.imageViewFoto);
     }
 
     @Override
